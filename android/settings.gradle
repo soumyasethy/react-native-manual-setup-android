@@ -1,0 +1,2 @@
+rootProject.name='ReactNativeSetupAndroid'
+include ':app'
