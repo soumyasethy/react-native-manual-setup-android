@@ -27,10 +27,10 @@ project.xcworkspace
 
 # Gradle
 /build/
-/SwacchUk/android/app/build/
-/SwacchUk/android/app/gradle/
-/SwacchUk/android/app/gradlew
-/SwacchUk/android/app/gradlew.bat
+/ReactNativeSetupAndroid/android/app/build/
+/ReactNativeSetupAndroid/android/app/gradle/
+/ReactNativeSetupAndroid/android/app/gradlew
+/ReactNativeSetupAndroid/android/app/gradlew.bat
 /ReactAndroid/build/
 /ReactAndroid/gradle/
 /ReactAndroid/gradlew
