@@ -4,5 +4,10 @@
   "private": true,
   "scripts": {
     "start": "yarn react-native start"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
+    "react": "^16.13.1",
+    "react-native": "^0.62.2"
   }
 }
