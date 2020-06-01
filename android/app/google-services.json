@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "75061904987",
+    "firebase_url": "https://remotebundleupdate.firebaseio.com",
+    "project_id": "remotebundleupdate",
+    "storage_bucket": "remotebundleupdate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75061904987:android:5f991a53adb47d97c4a17e",
+        "android_client_info": {
+          "package_name": "com.soumya.sethy.reactnativesetupandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "75061904987-ek89nmd1rrqsjhtq5ne39f5t5pma8ab6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxAKwIHlCFjbEnRkUKtKw-M7DTn_u4eO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "75061904987-ek89nmd1rrqsjhtq5ne39f5t5pma8ab6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
