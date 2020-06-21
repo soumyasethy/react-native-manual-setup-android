@@ -1,7 +1,7 @@
 # react-native-setup-android
 > A simple demo project created from Android Studio to show how to integrate React Native manually with Auto-Linking enabled to support platform-specific (native) code.
 
-> OTA Update with Firebase
+> Over the Air(OTA) Update with Firebase. No legacy deployment needed.
 
 # Features of this setup,
 - This setup is very helpful when you are working with big mobile team having Native Android Modules, React Native and Flutter all in same App.
