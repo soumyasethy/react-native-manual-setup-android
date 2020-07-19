@@ -1,6 +1,5 @@
 import React from "react";
 import { AppRegistry, StyleSheet, Text, View } from "react-native";
-import AsyncStorage from "@react-native-community/async-storage";
 
 class HelloWorld extends React.Component {
   render() {

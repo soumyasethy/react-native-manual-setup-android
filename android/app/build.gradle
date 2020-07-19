@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 /**************** Hermes Setup ********************/
 project.ext.react = [
-       enableHermes: false
+        enableHermes: false
 ]
 def jscFlavor = 'org.webkit:android-jsc:+'
 def enableHermes = project.ext.react.get("enableHermes", false);
@@ -33,20 +33,24 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //firebase
+    implementation 'com.google.firebase:firebase-config:19.1.4'
+    //PR Downloader
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
 
     //React Native Dependencies Setup Here...
     implementation "com.facebook.react:react-native:+"
 
     //Hermes Dependencies Setup here...
-   if (enableHermes) {
-       def hermesPath = "../../node_modules/hermes-engine/android/";
-       debugImplementation files(hermesPath + "hermes-debug.aar")
-       releaseImplementation files(hermesPath + "hermes-release.aar")
-   } else {
-       implementation jscFlavor
-   }
+    if (enableHermes) {
+        def hermesPath = "../../node_modules/hermes-engine/android/";
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
+    } else {
+        implementation jscFlavor
+    }
 }
 //(MainApplication) Manual ReactPackage Setup here...
- apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
- applyNativeModulesAppBuildGradle(project)
-
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+apply plugin: 'com.google.gms.google-services';
+applyNativeModulesAppBuildGradle(project)
