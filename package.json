@@ -3,6 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn react-native start"
+    "start": "yarn react-native start",
+    "android-run": "yarn react-native run-android",
+    "android-reverse-tcp": "adb reverse tcp:8081 tcp:8081",
+    "android-build-bundle": "mkdir -p android/app/src/main/assets && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android-export-bundle": "mkdir -p android/output && react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/output/index.android.bundle --assets-dest android/app/src/main/res"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.11.0",
+    "react": "^16.13.1",
+    "react-native": "^0.62.2"
   }
 }

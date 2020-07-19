@@ -1,19 +1,22 @@
 apply plugin: 'com.android.application'
-
+/**************** Hermes Setup ********************/
+project.ext.react = [
+        enableHermes: false
+]
+def jscFlavor = 'org.webkit:android-jsc:+'
+def enableHermes = project.ext.react.get("enableHermes", false);
+/**************** End of Hermes Setup***************/
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
-
     defaultConfig {
         applicationId "com.soumya.sethy.reactnativesetupandroid"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -22,7 +25,6 @@ android {
     }
 
 }
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -31,4 +33,24 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //firebase
+    implementation 'com.google.firebase:firebase-config:19.1.4'
+    //PR Downloader
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
+
+    //React Native Dependencies Setup Here...
+    implementation "com.facebook.react:react-native:+"
+
+    //Hermes Dependencies Setup here...
+    if (enableHermes) {
+        def hermesPath = "../../node_modules/hermes-engine/android/";
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
+    } else {
+        implementation jscFlavor
+    }
 }
+//(MainApplication) Manual ReactPackage Setup here...
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+apply plugin: 'com.google.gms.google-services';
+applyNativeModulesAppBuildGradle(project)
